@@ -1,3 +1,33 @@
+header ul {
+  list-style-type: none; /* remove bullets */
+  margin: 0; /* remove default margin */
+  padding: 0; /* remove default padding */
+  display: flex; /* use flexbox for horizontal layout */
+  align-items: center; /* vertically center items */
+  background-color: #f0f0f0; /* light gray background */
+}
+
+header ul li {
+  margin-right: 1rem; /* space between items */
+}
+
+
+
+/*logo style -  laptop icon*/
+.logo {
+  font-size: 2rem;   /* make the laptop logo larger */
+  margin-right: 20px;    /*push other nav items to the right*/
+  cursor: pointer; /* show pointer on hover */
+  transition: transform 0.2s ease, color 0.2s ease; /* smooth animation*/
+}
+
+.logo:hover {
+  transform: scale(1.2); /* slightly enlarge on hover */
+  color: #007acc; /* change color(blue) on hover */
+}
+  
+
+
 /* Make the body a flex container */
 body {
   display: flex;
