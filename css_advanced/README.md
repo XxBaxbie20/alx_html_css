@@ -1,7 +1,11 @@
 # HTML & CSS Advanced Project
 
-This project is a continuation of the **HTML Advanced** task.  
-It focuses on implementing **modern, responsive CSS styling** to a semantic HTML structure designed from a Figma layout.
+[![Live Demo](https://img.shields.io/badge/View%20Demo-%F0%9F%94%97-blueviolet?style=for-the-badge)](https://xxbaxbie20.github.io/alx_html_css/css_advanced/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/XxBaxbie20/alx_html_css)
+
+An advanced front-end project built with **semantic HTML5** and **modern CSS**, following the official **Figma design** from the ALX Front-End track.  
+It focuses on layout precision, responsive design, and consistent UI styling across sections.
+
 
 ---
 
