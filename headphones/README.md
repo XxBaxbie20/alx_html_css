@@ -62,40 +62,45 @@ This page replicates the provided **Headphones** design from Figma, following ex
 ## 🚀 Getting Started
 
 ### 1️⃣ Navigate to the Project Directory
-```bash
-cd alx_html_css/headphones
-
 
 ### 2️⃣ Open in Your Browser
 
-Double-click the `index.html` file or use VS Code’s **Live Server** for instant preview.
+Double-click the index.html file or use VS Code’s Live Server for instant preview.
+
+---
+
+## 🧰 Built With
+
+- HTML5 — Semantic structure
+
+- CSS3 — Responsive styling and layout
+
+- (Optional) JavaScript — For interactivity (if added later)
 
 ---
 
 ## 🧠 Developer Notes
 
-- The design automatically adjusts to mobile view below 480px screen width.
-- Fractional Figma values were rounded for CSS accuracy.
-- Ensure both fonts are installed for consistent typography.
+- Ensure the required fonts are installed for accurate rendering.
+
+- When resizing your browser to ≤ 480px, the layout automatically switches to the mobile version.
+
+- Float or fractional Figma values were rounded for CSS consistency.
 
 ---
 
-## 🧩 Interactions Overview
-
-| Element         | State          | Effect                                  |
-| --------------- | -------------- | --------------------------------------- |
-| **Links**       | Hover / Active | Color changes to `#FF6565`              |
-| **Buttons**     | Hover / Active | Fades slightly (`opacity: 0.9`)         |
-| **Page Layout** | Resize         | Switches to mobile layout under `480px` |
+## 📸 Interactions Preview
+- Element	Action	Visual Effect
+- Links	Hover / Active	Change color to #FF6565
+- Buttons	Hover / Active	Slight fade via opacity: 0.9
+- Page Layout	Resize	Switches to mobile layout below 480px width
 
 ---
 
 ## 🏁 Final Thoughts
 
-This project demonstrates precision, responsive design, and clean front-end code.
-It translates a Figma concept into a functional, accessible, and visually accurate web page.
-
----
+This Headphones project demonstrates front-end development precision — translating a Figma concept into a functional, pixel-perfect webpage.
+It combines design fidelity, responsive adaptability, and clean code principles.
 
 ## 🧡 Credits
 
