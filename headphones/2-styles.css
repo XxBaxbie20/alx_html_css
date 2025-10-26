@@ -1,0 +1,94 @@
+/* Single canonical stylesheet — no duplicates */
+:root{--main-color:#FF6565;--main-accent:#ff8585;--text:#222;--muted:#666;--container-width:1100px}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:var(--text)}
+.container{max-width:var(--container-width);margin:0 auto;padding:0 20px}
+.header{background:#fff;border-bottom:1px solid rgba(0,0,0,.05)}
+.nav-container{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.logo img{height:40px;display:block}
+nav .nav-list{list-style:none;margin:0;padding:0;display:flex;gap:18px}
+nav .nav-list li a{text-decoration:none;color:var(--text);font-weight:600}
+.menu-toggle{display:none;cursor:pointer}.menu-toggle span{display:block;width:22px;height:2px;background:#111;margin:4px 0}
+.hero{padding:60px 0;text-align:center}.hero h1{margin:0 0 12px;font-size:2rem}.hero p{margin:0 0 18px;color:var(--muted)}.btn{background:var(--main-color);color:#fff;border:none;padding:10px 18px;border-radius:6px;cursor:pointer;font-weight:700}
+.what-we-do{background:#fff;color:var(--text);text-align:center;padding:80px 20px}
+.what-we-do h2{font-size:2rem;margin-bottom:20px}.what-we-do p{max-width:700px;margin:0 auto 50px;font-size:1rem;line-height:1.6;color:#444}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;align-items:start}
+.service{padding:20px;text-align:center}.service h3{font-size:1.2rem;margin:10px 0 8px}.service p{color:var(--muted);font-size:.95rem;margin:0}
+svg.icon{width:60px;height:60px;display:block;margin:0 auto 15px;color:var(--main-color);transition:color .2s ease,transform .2s ease}.service:hover svg.icon{color:var(--main-accent);transform:translateY(-4px)}
+@media(max-width:768px){.hero h1{font-size:1.6rem}.what-we-do{padding:60px 16px}}@media(max-width:480px){.services{grid-template-columns:1fr}.menu-toggle{display:block}}
+
+/* OUR RESULTS SECTION */
+.our-results {
+  position: relative;
+  background: url("images/headphones_hero_2.jpg") no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.our-results::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for contrast */
+  z-index: 0;
+}
+
+.our-results .container {
+  position: relative;
+  z-index: 1;
+}
+
+.our-results h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.our-results p {
+  max-width: 700px;
+  margin: 0 auto 60px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+.result {
+  border: 2px solid var(--main-color);
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.result:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.result h3 {
+  font-size: 2rem;
+  color: var(--main-color);
+  margin-bottom: 10px;
+}
+
+.result p {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #fff;
+}
