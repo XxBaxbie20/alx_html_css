@@ -93,6 +93,7 @@ svg.icon{width:60px;height:60px;display:block;margin:0 auto 15px;color:var(--mai
 
 .result {
   border: 2px solid var(--main-color);
+  border-radius: 50%;
   width: 160px;
   height: 160px;
   display: flex;
@@ -121,6 +122,7 @@ svg.icon{width:60px;height:60px;display:block;margin:0 auto 15px;color:var(--mai
   font-size: 0.9rem;
   color: #fff;
 }
+
 /* PENTAGON STYLES for "Our results" */
 :root {
   --pentagon-size: 180px; /* base size, responsive below */
@@ -203,8 +205,7 @@ svg.icon{width:60px;height:60px;display:block;margin:0 auto 15px;color:var(--mai
 .our-results .pentagon-content h3 { color: var(--main-color); }
 .our-results .pentagon-content p { color: #fff; }
 
-/* If results use white background (alternate), invert colors
-   No overrides needed — keep defaults to avoid empty rulesets */
+/* If results use white background (alternate), no overrides needed; leaving defaults */
 
 /* Responsive sizing */
 @media (max-width: 900px) {
@@ -219,10 +220,226 @@ svg.icon{width:60px;height:60px;display:block;margin:0 auto 15px;color:var(--mai
 }
 
 
+/* CONTACT SECTION */
+.contact {
+  background: #fff;
+  padding: 100px 20px;
+  text-align: center;
+  color: var(--text);
+}
+
+.contact .container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: var(--text);
+}
+
+.contact p {
+  color: var(--muted);
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form .form-group {
+  width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  background-color: #f9f9f9;
+  color: var(--text);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--main-color);
+  background-color: #fff;
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+.contact-form .btn {
+  align-self: center;
+  background: var(--main-color);
+  color: #fff;
+  padding: 12px 26px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form .btn:hover {
+  background: var(--main-accent);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 70px 16px;
+  }
+
+  .contact h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* FOOTER SECTION */
+.footer {
+  background: #071629; /* Navy blue background */
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px 40px;
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.footer-logo img {
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.social-icon {
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--main-color);
+  transform: scale(1.15);
+}
+
+.footer-note {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 10px;
+}
+
+/* RESPONSIVE FOOTER */
+@media (max-width: 600px) {
+  .footer-socials {
+    gap: 20px;
+  }
+
+  .footer {
+    padding: 60px 16px 30px;
+  }
+
+  .footer-logo img {
+    height: 32px;
+  }
+
+  .footer-note {
+    font-size: 0.8rem;
+  }
+}
+
 
 /* Override the circular border for pentagon results */
 .results-grid .result {
   border-radius: 0;
   border: none;
   background: none;
+}
+
+/* HAMBURGER MENU STYLES */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+  z-index: 999;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hide menu on small screens initially */
+@media (max-width: 480px) {
+  .nav {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .nav.active {
+    display: block;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-list li a {
+    color: #fff;
+    font-size: 1.2rem;
+  }
+}
+
+/* Menu toggle animation when active */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
 }

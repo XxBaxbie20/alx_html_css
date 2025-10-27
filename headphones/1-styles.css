@@ -3,7 +3,38 @@
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:var(--text)}
 .container{max-width:var(--container-width);margin:0 auto;padding:0 20px}
-.header{background:#fff;border-bottom:1px solid rgba(0,0,0,.05)}
+.header {
+  position: relative;
+  background: url("images/headphones_hero_1.jpg") center/cover no-repeat;
+  color: #fff;
+  border-bottom: none;
+  min-height: 100vh;
+}
+
+/* Optional overlay for better text contrast */
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  z-index: 0;
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding-top: 150px;
+  padding-bottom: 120px;
+}
+
+.hero h1, .hero p {
+  color: #fff;
+}
+
 .nav-container{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
 .logo img{height:40px;display:block}
 nav .nav-list{list-style:none;margin:0;padding:0;display:flex;gap:18px}
@@ -17,6 +48,182 @@ nav .nav-list li a{text-decoration:none;color:var(--text);font-weight:600}
 svg.icon{width:60px;height:60px;display:block;margin:0 auto 15px;color:var(--main-color);transition:color .2s ease,transform .2s ease}.service:hover svg.icon{color:var(--main-accent);transform:translateY(-4px)}
 @media(max-width:768px){.hero h1{font-size:1.6rem}.what-we-do{padding:60px 16px}}@media(max-width:480px){.services{grid-template-columns:1fr}.menu-toggle{display:block}}
 
+/* OUR RESULTS SECTION */
+.our-results {
+  position: relative;
+  background: url("images/headphones_hero_2.jpg") no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
 
+.our-results::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for contrast */
+  z-index: 0;
+}
 
+.our-results .container {
+  position: relative;
+  z-index: 1;
+}
 
+.our-results h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.our-results p {
+  max-width: 700px;
+  margin: 0 auto 60px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+.result {
+  border: 2px solid var(--main-color);
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.result:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.result h3 {
+  font-size: 2rem;
+  color: var(--main-color);
+  margin-bottom: 10px;
+}
+
+.result p {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+/* PENTAGON STYLES for "Our results" */
+:root {
+  --pentagon-size: 180px; /* base size, responsive below */
+}
+
+/* Ensure the result container centers the pentagon */
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Outer pentagon wrapper (controls size & interaction) */
+.pentagon {
+  width: var(--pentagon-size);
+  height: calc(var(--pentagon-size) * 1.05); /* little extra height for visual balance */
+  position: relative;
+  display: grid;
+  place-items: center;
+  cursor: default;
+  transition: transform .28s ease, filter .28s ease;
+}
+
+/* The actual pentagon shape using clip-path */
+.pentagon-face {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,101,101,0.14), rgba(255,101,101,0.06));
+  border: 3px solid var(--main-color);
+  border-radius: 8px; /* soft corners inside the clip */
+  clip-path: polygon(
+    50% 0%,
+    93% 35%,
+    76% 94%,
+    24% 94%,
+    7% 35%
+  );
+  box-shadow: 0 8px 18px rgba(7,22,41,0.25);
+  display: block;
+  transition: transform .28s ease, box-shadow .28s ease, background .28s ease;
+  z-index: 1;
+}
+
+/* place the text above the face */
+.pentagon-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff; /* good on dark backgrounds; adjust below for light background */
+  pointer-events: none;
+}
+
+/* Number and label */
+.pentagon-content h3 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--main-color);
+  line-height: 1;
+}
+
+.pentagon-content p {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 600;
+  text-transform: none;
+}
+
+/* Hover/Tap effect */
+.pentagon:hover .pentagon-face,
+.pentagon:focus-within .pentagon-face {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 18px 36px rgba(7,22,41,0.35);
+  background: linear-gradient(180deg, rgba(255,101,101,0.18), rgba(255,133,133,0.06));
+}
+
+/* For result cards on light backgrounds (if your .our-results uses image overlay),
+   ensure pentagon text is visible. If background is white, switch text colors */
+.our-results .pentagon-face { background: rgba(0,0,0,0.08); }
+.our-results .pentagon-content h3 { color: var(--main-color); }
+.our-results .pentagon-content p { color: #fff; }
+
+/* If results use white background (alternate), invert colors
+   No overrides needed — keep defaults to avoid empty rulesets */
+
+/* Responsive sizing */
+@media (max-width: 900px) {
+  :root { --pentagon-size: 150px; }
+}
+
+@media (max-width: 480px) {
+  :root { --pentagon-size: 120px; }
+  .pentagon-content h3 { font-size: 1.6rem; }
+  .pentagon-content p { font-size: 0.85rem; }
+  .results-grid { gap: 20px; }
+}
+
+/* Override the circular border for pentagon results */
+.results-grid .result {
+  border-radius: 0;
+  border: none;
+  background: none;
+}

@@ -1,0 +1,132 @@
+/* BASE STYLES */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+}
+
+/* HEADER */
+.header {
+  background: url('images/headphones_hero_1.jpg') no-repeat center/cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* HERO */
+.hero-content {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.btn {
+  background: #ff6565;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+/* WHAT WE DO */
+.what-we-do {
+  text-align: center;
+  padding: 80px 20px;
+  background: #fff;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+/* Animation effect */
+.service {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeIn 1.5s ease-in-out both;
+}
+
+.service:hover {
+  transform: scale(1.08) rotate(2deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* OUR RESULTS */
+.our-results {
+  background: #0b1a36;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.result {
+  background: #162850;
+  border-radius: 10px;
+  padding: 20px;
+  animation: bounceIn 2s ease-in-out infinite alternate;
+}
+
+@keyframes bounceIn {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+/* FOOTER */
+.footer {
+  background: #12013f;
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.footer .socials i {
+  font-size: 20px;
+  margin: 0 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.footer .socials i:hover {
+  transform: scale(1.2);
+}
+
+
